@@ -4,7 +4,7 @@ from dao.genre import GenreDAO
 from service.movie import MovieService
 from service.genre import GenreService
 from service.director import DirectorService
-from setup_db import db
+from app.setup_db import db
 
 movie_dao = MovieDAO(session=db.session)
 director_dao = DirectorDAO(session=db.session)

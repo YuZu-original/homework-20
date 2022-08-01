@@ -2,10 +2,10 @@ from flask import Flask
 from flask_restx import Api
 
 from config import Config
-from setup_db import db
-from views.directors import director_ns
-from views.genres import genre_ns
-from views.movies import movie_ns
+from app.setup_db import db
+from app.views.directors import director_ns
+from app.views.genres import genre_ns
+from app.views.movies import movie_ns
 
 
 def create_app(config_object):
@@ -30,7 +30,6 @@ def create_data(app, db):
 
 
 app = create_app(Config())
-app.debug = True
 
 if __name__ == '__main__':
-    app.run(host="localhost", port=10001, debug=True)
+    app.run(host="localhost", port=5000)

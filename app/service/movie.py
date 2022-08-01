@@ -6,18 +6,23 @@ class MovieService:
         self.dao = dao
 
     def get_one(self, bid):
+        """get movie by id"""
         return self.dao.get_one(bid)
 
     def get_all(self):
+        """get all movies"""
         return self.dao.get_all()
     
     def create(self, movie_d):
+        """create movie"""
         return self.dao.create(movie_d)
 
     def update(self, movie_d):
+        """update movie"""
         return self.dao.update(movie_d)
 
     def partially_update(self, movie_d):
+        """patially update movie"""
         movie = self.get_one(movie_d["id"])
         if "title" in movie_d:
             movie.title = movie_d.get("title")
@@ -36,4 +41,5 @@ class MovieService:
         self.dao.update(movie)
 
     def delete(self, rid):
+        """delete movie by id"""
         self.dao.delete(rid)

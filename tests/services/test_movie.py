@@ -30,6 +30,7 @@ class TestMovieService:
     
     
     def test_get_one(self):
+        """test get_one()"""
         movie = self.movie_service.get_one(1)
         
         assert movie is not None
@@ -37,12 +38,14 @@ class TestMovieService:
     
     
     def test_get_all(self):
+        """test get_all()"""
         movies = self.movie_service.get_all()
         
         assert len(movies) > 0
     
     
     def test_create(self):
+        """test create()"""
         data = {
             "title": "YuZu Film 2",
             "description": "desc 2",
@@ -58,10 +61,12 @@ class TestMovieService:
     
     
     def test_delete(self):
+        """test delete()"""
         self.movie_service.delete(1)
     
     
     def test_update(self):
+        """test update()"""
         data = {
             "id": 1,
             "title": "YuZu Film",

@@ -30,6 +30,7 @@ class TestGenreService:
     
     
     def test_get_one(self):
+        """test get_one()"""
         genre = self.genre_service.get_one(1)
         
         assert genre is not None
@@ -37,12 +38,14 @@ class TestGenreService:
     
     
     def test_get_all(self):
+        """test get_all()"""
         genres = self.genre_service.get_all()
         
         assert len(genres) > 0
     
     
     def test_create(self):
+        """test create()"""
         data = {
             "name": "Drama"
         }
@@ -54,10 +57,12 @@ class TestGenreService:
     
     
     def test_delete(self):
+        """test delete()"""
         self.genre_service.delete(1)
     
     
     def test_update(self):
+        """test update()"""
         data = {
             "id": 1,
             "name": "Action"

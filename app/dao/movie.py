@@ -6,23 +6,28 @@ class MovieDAO:
         self.session = session
 
     def get_one(self, bid):
+        """get movie by id"""
         return self.session.query(Movie).get(bid)
 
     def get_all(self):
+        """get all movies"""
         return self.session.query(Movie).all()
 
     def create(self, movie_d):
+        """create movie"""
         ent = Movie(**movie_d)
         self.session.add(ent)
         self.session.commit()
         return ent
 
     def delete(self, rid):
+        """delete movie by id"""
         movie = self.get_one(rid)
         self.session.delete(movie)
         self.session.commit()
 
     def update(self, movie_d):
+        """update movie"""
         movie = self.get_one(movie_d.get("id"))
         movie.title = movie_d.get("title")
         movie.description = movie_d.get("description")

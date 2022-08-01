@@ -30,6 +30,7 @@ class TestDirectorService:
     
     
     def test_get_one(self):
+        """test get_one()"""
         director = self.director_service.get_one(1)
         
         assert director is not None
@@ -37,12 +38,14 @@ class TestDirectorService:
     
     
     def test_get_all(self):
+        """test get_all()"""
         directors = self.director_service.get_all()
         
         assert len(directors) > 0
     
     
     def test_create(self):
+        """test create()"""
         data = {
             "name": "Vasiliy"
         }
@@ -54,10 +57,12 @@ class TestDirectorService:
     
     
     def test_delete(self):
+        """test delete()"""
         self.director_service.delete(1)
     
     
     def test_update(self):
+        """test update()"""
         data = {
             "id": 1,
             "name": "Vasiliy"

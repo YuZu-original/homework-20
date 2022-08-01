@@ -12,8 +12,8 @@ def movie_dao():
     movie_dao = MovieDAO(None)
     
     movie1 = Movie(id=1, title="The Shawshank Redemption", description="description", trailer="link to the trailer", year=1994, rating=9)
-    movie2 = Movie(id=1, title="The Dark Knight", description="description", trailer="link to the trailer", year=2008, rating=9)
-    movie3 = Movie(id=1, title="Passengers", description="description", trailer="link to the trailer", year=2016, rating=7)
+    movie2 = Movie(id=2, title="The Dark Knight", description="description", trailer="link to the trailer", year=2008, rating=9)
+    movie3 = Movie(id=3, title="Passengers", description="description", trailer="link to the trailer", year=2016, rating=7)
     
     movie_dao.get_one = MagicMock(return_value=movie1)
     movie_dao.get_all = MagicMock(return_value=[movie1, movie2, movie3])
